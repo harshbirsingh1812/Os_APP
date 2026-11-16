@@ -21,6 +21,10 @@ expo-env.d.ts
 # Metro
 .metro-health-check*
 
+# temporary files
+~$*
+*.tmp
+
 # debug
 npm-debug.*
 yarn-debug.*
