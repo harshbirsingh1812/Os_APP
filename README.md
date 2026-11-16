@@ -1,16 +1,36 @@
-# ⏱️ TimeBuddy – Android Time Management Application
+# ⏱️ TimeBuddy Pro – Advanced Android Time Management Application
 
-> A modern, beginner-friendly, and offline-first Android time management application built with **React Native** and **Expo**.
+> A modern, sophisticated, and offline-first Android time management application built with **React Native** and **Expo**.
 
-![TimeBuddy Preview](C:/Users/HP/.gemini/antigravity/brain/6362fb06-0dc5-4258-af55-be26c525eb10/timebuddy_final.png)
+![TimeBuddy Dark Mode](C:/Users/HP/.gemini/antigravity/brain/6362fb06-0dc5-4258-af55-be26c525eb10/timebuddy_hero_dark.png)
 
 ---
 
-## 📖 Overview
+## 🌟 What's New in TimeBuddy Pro
 
-**TimeBuddy** helps you plan your day, stay focused, and track your daily productivity with ease. It runs completely offline using local device storage, requiring no login, no backend server, and no internet connection.
+1. **⏱️ Integrated Pomodoro Focus Timer**:
+   - Tap the stopwatch icon on any task to launch a dedicated 25-minute Pomodoro session (with 15m Sprint and 5m Break presets).
+   - Real-time digital circular countdown with Play, Pause, and Reset controls.
+   - Automatically tracks daily completed focus sessions (`🔥 Focus` streak).
+2. **🌓 Deep OLED Dark Mode**:
+   - One-tap toggle between a crisp minimalist Light Theme and a deep OLED Slate Dark Theme (`#0B0F19`).
+   - Theme choice is automatically saved and remembered across app launches.
+3. **🏷️ Category System**:
+   - Tag tasks with custom icons and color badges:
+     - 📚 **Study** (Purple)
+     - 💼 **Work** (Blue)
+     - 🏋️ **Health** (Green)
+     - 🏠 **Personal** (Amber)
+4. **🔍 Instant Live Search**:
+   - Tap the search icon to filter tasks dynamically in real time by title, category, or time.
+5. **🔀 Smart Multi-Sorting**:
+   - Instant 1-tap reordering by **Recent** (newest first), **Priority** (High $\rightarrow$ Low), or **Time** (chronological).
+6. **📤 Native Daily Summary Sharing**:
+   - One-tap button in the header formats and shares today's productivity report via WhatsApp, Email, or clipboard using Android's native share sheet.
 
-### ✨ Key Features
+---
+
+## 📖 Core Features
 
 - **🌅 Smart "My Day" Dashboard**:
   - Time-aware dynamic greeting (*"Good Morning! ☀️"*, *"Good Afternoon! 🌤️"*, *"Good Evening! 🌙"*).
@@ -18,18 +38,13 @@
   - Visual progress bar that animates as tasks are completed or modified.
   - Metric counters for **Total**, **Completed**, and **Pending** tasks with daily completion percentage.
 - **🎯 Task Management**:
-  - **Add Tasks**: Assign a title, planned time (or quick preset), and priority.
+  - **Add Tasks**: Assign title, category, planned time presets, and priority.
   - **Edit Tasks**: Modify any existing task with prefilled values.
   - **Delete Tasks**: Safe removal with a native Android confirmation prompt.
   - **Toggle Completion**: Tap any task's checkbox to mark it done with strikethrough styling.
-- **🚦 Priority System**:
-  - **High** (Soft Rose tag `#DC2626`)
-  - **Medium** (Soft Amber tag `#D97706`)
-  - **Low** (Soft Emerald tag `#059669`)
-- **🔍 Filter Views**:
-  - Instant filtering between **All**, **Pending**, and **Completed** tasks, each with live badge counters.
-- **💾 Offline Persistence**:
-  - Uses `@react-native-async-storage/async-storage` to preserve all tasks automatically across restarts.
+- **🚦 Priority System**: High (Red), Medium (Amber), Low (Green).
+- **🔍 Filter Views**: Instant filtering between **All**, **Pending**, and **Completed** with live counter badges.
+- **💾 Offline Persistence**: Powered by `@react-native-async-storage/async-storage` for reliable local data storage.
 
 ---
 
@@ -39,7 +54,7 @@
 | :--- | :--- |
 | **React Native (0.88.1)** | Mobile application framework |
 | **Expo (SDK 58)** | Development platform and native tooling |
-| **JavaScript (ES6+)** | Functional components and React Hooks (`useState`, `useEffect`, `useMemo`) |
+| **JavaScript (ES6+)** | Functional components and React Hooks (`useState`, `useEffect`, `useMemo`, `useRef`) |
 | **AsyncStorage** | Local persistent storage |
 | **Expo Vector Icons** | Ionicons icon set |
 | **Android SDK (API 34)** | Target platform running on Google Pixel 7 AVD |
@@ -57,45 +72,27 @@ app_2/
 ├── assets/                  # App icons and adaptive splash images
 ├── README.md                # Project documentation and quick-start guide
 ├── ARCHITECTURE.md          # Technical architecture and data flow diagrams
-└── GETTING_STARTED.md       # Beginner guide and customization walkthrough
+├── GETTING_STARTED.md       # Beginner guide and customization walkthrough
+└── run_timebuddy.bat        # 1-Click launcher script
 ```
 
 ---
 
 ## 🚀 Quick Start Guide
 
-### Prerequisites
-Make sure your environment has:
-- **Node.js** (LTS v24+) & **npm**
-- **Android SDK** & **Android Emulator** (`Pixel_7_API_34`)
+### 1. Launch with the 1-Click Desktop Shortcut
+Double click:
+📁 **`C:\Users\HP\OneDrive\Desktop\Run_TimeBuddy.bat`**
 
-### 1. Launch the Android Emulator
-In PowerShell:
+### 2. Or Launch from PowerShell
 ```powershell
+# 1. Start the emulator
 emulator -avd Pixel_7_API_34
-```
-*(If the command is not recognized in an old terminal, run `$env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User")` or reopen PowerShell).*
 
-### 2. Start TimeBuddy
-Navigate to this project folder and run:
-```powershell
+# 2. Start TimeBuddy
 cd C:\Users\HP\OneDrive\Desktop\app_2
 npx expo start --android
 ```
-
-Expo will automatically:
-1. Connect to the running Pixel 7 emulator.
-2. Launch the **Expo Go** environment.
-3. Bundle and display **TimeBuddy** on your screen!
-
----
-
-## ⌨️ Helpful Emulator Shortcuts
-
-While the app is running in the emulator:
-- Press **`r`** in the Metro terminal to reload the app.
-- Press **`m`** in the Metro terminal to open the developer menu.
-- Press **`a`** to reopen on Android if disconnected.
 
 ---
 
@@ -104,4 +101,3 @@ While the app is running in the emulator:
 - [ARCHITECTURE.md](file:///c:/Users/HP/OneDrive/Desktop/app_2/ARCHITECTURE.md) – Detailed system architecture, component breakdown, and data flow.
 - [GETTING_STARTED.md](file:///c:/Users/HP/OneDrive/Desktop/app_2/GETTING_STARTED.md) – Step-by-step code explanation and guide to customizing TimeBuddy.
 - [App.js](file:///c:/Users/HP/OneDrive/Desktop/app_2/App.js) – Main application source code.
-
